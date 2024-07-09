@@ -18,10 +18,11 @@ function RegisterPage({onCreatedUser}) {
   const [confirm, setConfirm] = useState('');
   const navigate = useNavigate();
 
-
+ // post user
   const createUser = async() => {
     try {
-        const response = await axios.post("http://localhost:3005/api/users",{
+           const response = await axios.post("https://alreem-app-a1759fa6576e.herokuapp.com/api/users",{
+
             name: name,
             email: email, 
             password: password

@@ -29,7 +29,7 @@ function LoginPage() {
 
   const login = async(email, password) => {
     try {
-      const response = await axios.get(`http://localhost:3005/api/users/${email}/${password}`);
+      const response = await axios.get(`https://alreem-app-a1759fa6576e.herokuapp.com/api/users/${email}/${password}`);
       if(response.data.length > 0){
         alert('Login completed successfully!');
         setErrorMessage('');

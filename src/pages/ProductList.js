@@ -16,7 +16,7 @@ function ProductList() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3007/api/product")
+      .get("https://alreem-app22-43220fd1292e.herokuapp.com/api/product")
       .then((response) => {
         setProducts(response.data);
       })
@@ -32,7 +32,7 @@ if (categoryId==0){
 }
 else{
     axios
-      .get(`http://localhost:3007/api/productbycat/${categoryId}`)  
+      .get(`https://alreem-app22-43220fd1292e.herokuapp.com/api/productbycat/${categoryId}`)  
       .then((response) => {
         setProducts(response.data);
       })

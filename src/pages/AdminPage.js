@@ -22,7 +22,7 @@ function AdminPage() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3007/api/product")
+      .get("https://alreem-app22-43220fd1292e.herokuapp.com/api/product")
       .then((response) => {
         setProducts(response.data);
       })
@@ -77,73 +77,10 @@ function AdminPage() {
     setValidated(true);
   };
 
-  // const ProductEdit = async (ProductId) => {
-  //   const formData = new FormData();
-  //   formData.append("productName", productName);
-  //   formData.append("description", description);
-  //   formData.append("price", price);
-  //   formData.append("categoryId", catId);
-  //   if (file) {
-  //     formData.append("image", file);
-  //   } else {
-  //     formData.append("image", image);
-  //   }
-
-  //   try {
-  //     await axios.put(`http://localhost:3007/api/product/${ProductId}`, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data"
-  //       }
-  //     });
-  //     handleCloseEdit();
-  //     fetchProducts();
-  //   } catch (error) {
-  //     alert("Error: " + error);
-  //   }
-  // };
-
-  // const ProductAdd = async () => {
-  //   const formData = new FormData();
-  //   formData.append("productName", productName);
-  //   formData.append("description", description);
-  //   formData.append("price", price);
-  //   formData.append("categoryId", catId);
-  //   formData.append("image", file);
-
-  //   try {
-  //     await axios.post("http://localhost:3007/api/product", formData, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data"
-  //       }
-  //     });
-  //     handleCloseAdd();
-  //     fetchProducts();
-  //   } catch (error) {
-  //     alert("Error: " + error);
-  //   }
-  // };
-//================================================================
-  //  const ProductEdit =async (ProductId) => {
-  //   try {
-  //     const response = await 
-  //     axios.put(`http://localhost:3002/api/product/${ProductId}`,
-  //   {
-  //     ProductName: productName, 
-  //     Description: description, 
-  //     Price:price,
-  //     Image:image,
-  //     CategoryId: catId
-  //   });
-  //   handleCloseEdit();
-  //   fetchProducts();  
-  //   } catch (error) {
-  //     alert("error:" + error)    
-  //   }
-  // };
 
     const ProductEdit =async (ProductId) => {
       if(file) {
-      const url = 'http://localhost:3008/images';
+      const url = 'https://alreemreact-app-755910eac1b1.herokuapp.com/images';
       const formData = new FormData();
       formData.append('file', file);
       formData.append('fileName', file.name);
@@ -158,7 +95,7 @@ function AdminPage() {
       }
     try {
       const response = await 
-      axios.put(`http://localhost:3007/api/product/${ProductId}`,
+      axios.put(`https://alreem-app22-43220fd1292e.herokuapp.com/api/product/${ProductId}`,
     {
       productName: productName, 
       description: description, 
@@ -175,7 +112,7 @@ function AdminPage() {
 
     const ProductAdd = async () => {
     try {
-      await axios.post("http://localhost:3007/api/product",  {
+      await axios.post("https://alreem-app22-43220fd1292e.herokuapp.com/api/product",  {
       productName: productName, 
       description: description, 
       price:price,
@@ -183,7 +120,7 @@ function AdminPage() {
       categoryId: catId
       });
 
-      const url = 'http://localhost:3008/images';
+      const url = 'https://alreemreact-app-755910eac1b1.herokuapp.com/images';
       const formData = new FormData();
       formData.append('file', file);
       formData.append('fileName', file.name);
@@ -219,7 +156,7 @@ function AdminPage() {
       .then(async (willDelete) => {
         if (willDelete) {
           try {
-            await axios.delete(`http://localhost:3007/api/product/${ProductId}`);
+            await axios.delete(`https://alreem-app22-43220fd1292e.herokuapp.com/api/product/${ProductId}`);
             fetchProducts();
             swal(`Poof! The Product:
             -Name: ${product.ProductName}
@@ -243,18 +180,6 @@ function AdminPage() {
     setImage(event.target.files[0].name)
   }
 
-  // const backgroundStyle = {
-  //   backgroundImage: 'url("/images/StockCake-Natural Skin Care_1720251363.jpg")',
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   filter: 'blur(5px) brightness(0.8)',
-  //   position: 'fixed',
-  //   top: 0,
-  //   left: 0,
-  //   height: '100vh',
-  //   width: '100vw',
-  //   zIndex: -1,
-  // };
 
   useEffect(() => {
     // Disable scrolling
