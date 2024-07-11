@@ -80,7 +80,7 @@ function AdminPage() {
 
     const ProductEdit =async (ProductId) => {
       if(file) {
-      const url = 'https://alreemreact-app-755910eac1b1.herokuapp.com/images';
+      const url = `https://alreemreact-app-755910eac1b1.herokuapp.com/images`;
       const formData = new FormData();
       formData.append('file', file);
       formData.append('fileName', file.name);
@@ -120,7 +120,7 @@ function AdminPage() {
       categoryId: catId
       });
 
-      const url = 'https://alreemreact-app-755910eac1b1.herokuapp.com/images';
+      const url = `https://alreemreact-app-755910eac1b1.herokuapp.com/images`;
       const formData = new FormData();
       formData.append('file', file);
       formData.append('fileName', file.name);
